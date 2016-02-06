@@ -11,6 +11,9 @@
 </head>
 <body>
 
+
+
+
 <nav class='navbar navbar-default'>
 	<div class='container-fluid'>
 		<div class='navbar-header'>
@@ -26,6 +29,33 @@
 		</ul>
 	</div>
 </nav>
+
+<div class="navigation">
+	<% if user_signed_in? %>
+		<div class="request">
+			<p>Request A Video</p>
+		</div>	
+		<div class="login">
+			<div class="login_sub">
+				<p><a href='/users/edit'>EGGS</a></p>
+			</div>
+			<div class="login_sub">
+				<p><%= link_to('Log Off', destroy_user_session_path, :method => :delete) %></p>
+			</div>
+		</div>
+	<% else %>
+		<div class="request">
+			<p></p>
+		</div>	
+		<div class="login">
+			<div class="login_sub ls_plus">
+				<p><%= link_to('Sign in with Google', user_omniauth_authorize_path(:google_oauth2)) %></p>
+			</div>
+		</div>	
+	<% end %>
+</div>
+
+
 
 <%= yield %>
 

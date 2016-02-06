@@ -1,3 +1,136 @@
 // Place all the styles related to the videos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+//general and tags
+body{
+	//font-family: Roboto
+}
+h1{
+	font-size: 48px;
+	margin: 0 0 20px 0;
+}
+h3{
+	font-size: 24px;
+	margin: 0 0 20px 0;
+}
+p{
+	font-size: 16px;
+	margin: 0 0 20px 0;
+	line-height: 1.5;
+}
+.clear{
+	clear:both;
+}
+
+//navigation
+
+.navigation{
+	height: 5vw;
+	padding: 1vw;
+	font-size: 2vw;
+	color: white;
+	position: absolute;
+	background: transparent;
+	width:100%;
+}
+.request{
+	position: relative;
+	top:0;
+	left:0;
+	width: 90%;
+	float: left;
+}
+.login{
+	position: relative;
+	width: 10%;
+	top: 0;
+	right: 0;
+	float:right;
+}
+.login_sub{
+	width: 50%;
+	text-align: center;
+	float: left;
+}
+
+.ls_plus{
+	width: 100%;
+	text-align: right;
+	float:right;
+}
+
+.login_sub > p > a,
+.login_sub > p > a:hover,
+.login_sub > p > a:focus,
+.login_sub > p > a:visited{
+	color: white;
+	text-decoration: none;
+	background-color: transparent;
+}
+
+
+
+//hero image section
+.hero{
+	background: #303030;
+	height: 42vw;
+	min-height: 50vh;
+	background-size: cover;
+	width:100%;
+}
+
+.title{
+	width:50%;
+	margin: 0 33% 0 17%;
+	padding: 10vw 0 8vw;
+
+}
+
+.header, .powered{
+	color:white;
+	margin: 0 auto 1vw auto;
+}
+
+.header{
+	font-size: 6vw;
+	text-align: left;
+}
+
+.powered{
+	font-size: 1vw;
+	text-align: right;
+	margin-right: 4vw;
+}
+
+.subheader{
+	width: 50%;
+	color: white;
+	font-size: 2vw;
+	text-align: center;
+	margin: 0 auto 2vw auto;
+}
+
+.s-input{
+	width: 50%;
+	margin: 0 auto;
+}
+
+.p-input{
+	width:90%;
+	float: left;
+	border:none;
+	height: 3vw;
+	font-size: 1.25vw;
+}
+
+.b-input{
+	border: none;
+	width: 10%;
+	height: 3vw;
+	font-size: 1.5vw;
+	color: white;
+}
+
+
