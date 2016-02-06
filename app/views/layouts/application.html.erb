@@ -11,6 +11,23 @@
 </head>
 <body>
 
+<nav class='navbar navbar-default'>
+	<div class='container-fluid'>
+		<div class='navbar-header'>
+			<a class='navbar-brand' href='/'>Proving Grounds</a>
+		</div>
+			<ul class='nav navbar-nav navbar-right'>
+				<% if user_signed_in? %>
+					<li><a href='/users/edit'>Edit Account</a></li>
+					<li><% link_to('Logout', destroy_user_session_path, :method => :delete) %>
+				<% else %>
+					<li><a href='/users/sign_in'>Login</a></li>
+					<!-- <li><% link_to('Login', user_omniauth_authorize_path(:google_oauth2)) %></li> -->
+				<% end %>
+			</ul>
+	</div>
+</nav>
+
 <%= yield %>
 
 </body>

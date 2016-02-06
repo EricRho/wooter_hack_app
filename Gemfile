@@ -29,7 +29,15 @@ gem 'devise'
 
 gem 'bootstrap-sass'
 
+# Basic YouTube wrapper API
 gem 'youtube_it'
+
+# Google omniauth
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+
+# User created dummy email
+gem 'uuidtools'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
