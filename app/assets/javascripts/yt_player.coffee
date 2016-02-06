@@ -20,8 +20,9 @@ jQuery ->
       player_wrapper.append('<div id="ytPlayer"><p>Loading player...</p></div>')
 
       window.ytplayer = new YT.Player('ytPlayer', {
-        width: '100%'
-        height: player_wrapper.width() / 1.777777777
+        width: '75%'
+        # height: player_wrapper.width() / 1.777777777
+        height: player_wrapper.width() / 2
         videoId: video
         playerVars: {
           wmode: 'opaque'

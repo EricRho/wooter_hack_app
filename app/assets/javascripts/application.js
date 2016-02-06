@@ -12,8 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require angular
+//= require main.js
 //= require bootstrap
 //= require turbolinks
 //= require jquery.bind_with_delay
 //= require yt_player
+//= require_tree ./angular
 //= require_tree .
