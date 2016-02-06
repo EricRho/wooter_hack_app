@@ -27,8 +27,9 @@ class Video < ActiveRecord::Base
       self.title = video.title
       self.duration = parse_duration(video.duration)
       self.author = video.author.name
+      self.sport = video.sport
     rescue
-      # self.title = '' ; self.duration = '00:00:00' ; self.author = ''
+      self.title = '' , self.duration = '00:00:00' , self.author = '', self.sport = ''
     end
   end
 

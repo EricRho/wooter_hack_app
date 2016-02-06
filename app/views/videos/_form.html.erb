@@ -47,6 +47,11 @@
       <span class="help-block">A link to the video on YouTube.</span>
     </div>
 
+    <div class='form-group'>
+      <%= f.label :sport %>
+      <%= f.text_field :sport, class: 'form-control', required: true %>
+    </div>
+
     <%= f.submit class: 'btn btn-default' %>
   <% end %>
 </div>
