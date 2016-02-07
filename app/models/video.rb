@@ -22,14 +22,15 @@ class Video < ActiveRecord::Base
 
   def get_additional_info
     begin
-      client = YouTubeIt::Oauth2Client.new(dev_key: '348959413513-h8khqmjb7pirj69381scb6sh55k1strv.apps.googleusercontent.com')
+      client = YouTubeIt::Client.new()
       video = client.video_by(uid)
       self.title = video.title
       self.duration = parse_duration(video.duration)
       self.author = video.author.name
-      self.sport = video.sport
     rescue
-      self.title = '' , self.duration = '00:00:00' , self.author = '', self.sport = ''
+      self.title = '' 
+      self.duration = '00:00:00' 
+      self.author = ''
     end
   end
 

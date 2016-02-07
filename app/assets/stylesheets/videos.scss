@@ -37,14 +37,20 @@ p{
 }
 .request{
 	position: relative;
-	top:0;
+	top:-10px;
 	left:0;
-	width: 90%;
+	width: 85%;
 	float: left;
 }
+
+.request_details{
+	font-size: 16px;
+	color:white!important;
+}
+
 .login{
 	position: relative;
-	width: 10%;
+	width: 15%;
 	top: 0;
 	right: 0;
 	float:right;
@@ -56,11 +62,18 @@ p{
 }
 
 .ls_plus{
-	width: 100%;
+	width: 100%!important;
 	text-align: right;
 	float:right;
 }
 
+.request_details:hover,
+.request_details:focus,
+.request_details:visited,
+.powered > a,
+.powered > a:hover,
+.powered > a:focus,
+.powered > a:visited,
 .login_sub > p > a,
 .login_sub > p > a:hover,
 .login_sub > p > a:focus,
@@ -74,16 +87,17 @@ p{
 
 //hero image section
 .hero{
-	background: #303030;
+	background-image: url('hero_image.png');
 	height: 42vw;
 	min-height: 50vh;
 	background-size: cover;
+	background-position: 100% 100%;
 	width:100%;
 }
 
 .title{
-	width:50%;
-	margin: 0 33% 0 17%;
+	width:39vw;
+	margin: 0 auto;
 	padding: 10vw 0 8vw;
 
 }
@@ -95,13 +109,17 @@ p{
 
 .header{
 	font-size: 6vw;
-	text-align: left;
+	text-align: center;
+	float:left;
+	width:100%;
+	font-family: 'Oswald' , sans-serif;
 }
 
 .powered{
 	font-size: 1vw;
 	text-align: right;
-	margin-right: 4vw;
+	width:100%;
+	float: right;
 }
 
 .subheader{
@@ -113,8 +131,10 @@ p{
 }
 
 .s-input{
-	width: 50%;
+	width: 36%;
 	margin: 0 auto;
+	-webkit-box-shadow: 0 0 10px 1px rgba(0,0,0,.4);
+	box-shadow: 0 0 10px 1px rgba(0,0,0,.4);	
 }
 
 .p-input{
@@ -123,14 +143,20 @@ p{
 	border:none;
 	height: 3vw;
 	font-size: 1.25vw;
+	padding-left: 1vw;
+	border-bottom-left-radius: .2vw;
+	border-top-left-radius: .2vw;
 }
 
 .b-input{
 	border: none;
+	background-color: white;
 	width: 10%;
 	height: 3vw;
 	font-size: 1.5vw;
-	color: white;
+	color: rgba(0,0,0,.35);
+	border-bottom-right-radius: .2vw;
+	border-top-right-radius: .2vw;
 }
 
 

@@ -27,6 +27,8 @@ gem 'angularjs-rails'
 
 gem 'puma'
 
+gem 'faraday'
+
 gem 'devise'
 
 gem 'bootstrap-sass'
@@ -40,6 +42,8 @@ gem 'omniauth-google-oauth2'
 
 # User created dummy email
 gem 'uuidtools'
+
+gem 'rails_12factor'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
