@@ -1,4 +1,5 @@
-class VideosController < ApplicationController
+ 
+ class VideosController < ApplicationController
   before_action :set_video, only: [:show, :edit, :update, :destroy]
   before_filter :authorize_admin, only: :create
 
@@ -11,7 +12,6 @@ class VideosController < ApplicationController
     else
       @videos = Video.order('created_at DESC')
     end
-    # @videos = Video.order('created_at DESC')
 
   end
 
@@ -32,21 +32,34 @@ class VideosController < ApplicationController
   # POST /videos
   # POST /videos.json
   def create
-    if current_user.admin?
-      @video = Video.new(video_params)
-      respond_to do |format|
-        if @video.save
-          format.html { redirect_to @video, notice: 'Video was successfully created.' }
-          format.json { render :show, status: :created, location: @video }
-        else
-          format.html { render :new }
-          format.json { render json: @video.errors, status: :unprocessable_entity }
-        end
+    # if current_user.admin?
+    #   @video = Video.new(video_params)
+    #   respond_to do |format|
+    #     if @video.save
+    #       format.html { redirect_to @video, notice: 'Video was successfully created.' }
+    #       format.json { render :show, status: :created, location: @video }
+    #     else
+    #       format.html { render :new }
+    #       format.json { render json: @video.errors, status: :unprocessable_entity }
+    #     end
+    #   end
+    # else
+    #   format.html { render :new }
+    #   format.json { render json: @video.errors, status: :unprocessable_entity }
+    # end
+
+    @video = Video.new(video_params)
+
+    respond_to do |format|
+      if @video.save
+        format.html { redirect_to @video, notice: 'Your Video was successfully added'}
+        format.json {render :show, status: :created, location: @video}
+      else
+        format.html { render :new}
+        format.json {render json: @video.errors, status: :unprocessable_entity}
       end
-    else
-      format.html { render :new }
-      format.json { render json: @video.errors, status: :unprocessable_entity }
     end
+
     # @video = Video.new(video_params)
 
     # respond_to do |format|
