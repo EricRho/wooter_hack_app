@@ -22,26 +22,53 @@
 
 <!-- <p id="notice"><%= notice %></p> -->
 
-<div ng-controller='clockCtrl'>
+<!-- <div ng-controller='clockCtrl'>
   {{ clock | date: 'medium'}}
   <ul ng-repeat='thing in things'>
     <li>{{ thing.name }}</li>
   </ul>
-</div>
+</div> -->
 
 <!-- Videos -->
 <% if @videos.any? %>
   <div class="container">
-    <h1>Latest videos</h1>
+    <!-- <h1>Latest videos</h1> -->
 
-    <div id="player-wrapper"></div>
+    <!-- <div id="player-wrapper"></div> -->
+
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button> -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel"></h4>
+          </div>
+          <div class="modal-body">
+            <div id='player-wrapper'></div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
 
     <% @videos.in_groups_of(3) do |group| %>
       <div class="row">
         <% group.each do |video| %>
           <% if video %>
             <div class="col-md-4">
-              <div class="yt_video thumbnail">
+              <div class="yt_video thumbnail" data-toggle='modal' data-target='#myModal' data-show='false'>
                 <%= image_tag "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg", alt: video.title, class: 'yt_preview img-rounded', :"data-uid" => video.uid %>
                 <div class="caption">
                   <h5><%= video.title %></h5>

@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require angular
 //= require main.js
-//= require bootstrap
+
 //= require turbolinks
 //= require jquery.bind_with_delay
 //= require yt_player
