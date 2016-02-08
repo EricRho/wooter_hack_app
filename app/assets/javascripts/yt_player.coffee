@@ -27,7 +27,7 @@ jQuery ->
         playerVars: {
           wmode: 'opaque'
           autoplay: 0
-          modestbranding: 1
+          modestbranding: 0
         }
         events: {
           'onReady': -> window.ytPlayerLoaded = true
