@@ -24,14 +24,14 @@ class Video < ActiveRecord::Base
   # def get_additional_info
   #   begin
   #     # client = YouTubeIt::Client.new()
-  #     # client = Yt::Video.new() url: 
+  #     # client = Yt::Video.new() url:
   #     video = client.video_by(uid)
   #     self.title = video.title
   #     self.duration = parse_duration(video.duration)
   #     self.author = video.author.name
   #   rescue
-  #     self.title = '' 
-  #     self.duration = '00:00:00' 
+  #     self.title = ''
+  #     self.duration = '00:00:00'
   #     self.author = ''
   #   end
   # end

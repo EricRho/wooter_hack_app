@@ -25,14 +25,19 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'angularjs-rails'
 
+# For Observers used for getting video information before save
 gem 'rails-observers'
 
+# Youtube API and Authentication
 gem 'yt'
+
+gem 'will_paginate'
 
 gem 'puma'
 
 gem 'faraday'
 
+# Devise for user login
 gem 'devise'
 
 gem 'bootstrap-sass'

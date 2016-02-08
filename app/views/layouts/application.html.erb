@@ -22,15 +22,14 @@
 			</div>	
 			<div class="login">
 				<div class="login_sub">
-					<p><a href='/users/edit'>EGGS</a></p>
+					<!-- <p><a href='/users/edit'>EGGS</a></p> -->
 				</div>
 				<div class="login_sub">
-					<p><%= link_to('Log Off', destroy_user_session_path, :method => :delete) %></p>
+					<p><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></p>
 				</div>
 			</div>
 		<% else %>
 			<div class="request">
-				<p></p>
 			</div>	
 			<div class="login">
 				<div class="login_sub ls_plus">
