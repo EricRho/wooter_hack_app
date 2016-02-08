@@ -14,7 +14,7 @@ class Video < ActiveRecord::Base
       self.errors.add(:link, 'is not unique')
       false
     else
-      get_additional_info
+      # get_additional_info
     end
   end
 

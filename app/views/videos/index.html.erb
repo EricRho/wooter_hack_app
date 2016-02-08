@@ -42,9 +42,7 @@
           <% if video %>
             <div class="col-md-4">
               <div class="yt_video thumbnail">
-                <%= image_tag "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg", alt: video.title,
-                              class: 'yt_preview img-rounded', :"data-uid" => video.uid %>
-
+                <%= image_tag "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg", alt: video.title, class: 'yt_preview img-rounded', :"data-uid" => video.uid %>
                 <div class="caption">
                   <h5><%= video.title %></h5>
                   <p>Author: <b><%= video.author %></b></p>

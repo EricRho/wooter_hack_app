@@ -1,5 +1,6 @@
 class VideosController < ApplicationController
   before_action :set_video, only: [:show, :edit, :update, :destroy]
+  before_filter :authorize_admin, only: :create
 
   # GET /videos
   # GET /videos.json
@@ -25,17 +26,32 @@ class VideosController < ApplicationController
   # POST /videos
   # POST /videos.json
   def create
-    @video = Video.new(video_params)
-
-    respond_to do |format|
-      if @video.save
-        format.html { redirect_to @video, notice: 'Video was successfully created.' }
-        format.json { render :show, status: :created, location: @video }
-      else
-        format.html { render :new }
-        format.json { render json: @video.errors, status: :unprocessable_entity }
+    if current_user.admin?
+      @video = Video.new(video_params)
+      respond_to do |format|
+        if @video.save
+          format.html { redirect_to @video, notice: 'Video was successfully created.' }
+          format.json { render :show, status: :created, location: @video }
+        else
+          format.html { render :new }
+          format.json { render json: @video.errors, status: :unprocessable_entity }
+        end
       end
+    else
+      format.html { render :new }
+      format.json { render json: @video.errors, status: :unprocessable_entity }
     end
+    # @video = Video.new(video_params)
+
+    # respond_to do |format|
+    #   if @video.save
+    #     format.html { redirect_to @video, notice: 'Video was successfully created.' }
+    #     format.json { render :show, status: :created, location: @video }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @video.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /videos/1
@@ -63,13 +79,18 @@ class VideosController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_video
-      @video = Video.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_video
+    @video = Video.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def video_params
-      params.require(:video).permit(:title, :author, :link, :duration)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def video_params
+    params.require(:video).permit(:title, :author, :link, :duration, :sport)
+  end
+
+  def authorize_admin
+    return unless !current_user.admin?
+    redirect_to root_path, alert: 'Admins only!'
+  end
 end
