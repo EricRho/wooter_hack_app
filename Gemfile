@@ -33,6 +33,8 @@ gem 'yt'
 
 gem 'will_paginate'
 
+gem 'smart_listing'
+
 gem 'puma'
 
 gem 'faraday'

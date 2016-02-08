@@ -5,9 +5,14 @@ class VideosController < ApplicationController
   # GET /videos
   # GET /videos.json
   def index
-    # @videos = Video.all
+    @videos = Video.all
+    if params[:search]
+      @videos = Video.search(params[:search]).order('created_at DESC')
+    else
+      @videos = Video.order('created_at DESC')
+    end
     # @videos = Video.order('created_at DESC')
-    @videos = Video.filter(params.slice(:sport))
+
   end
 
   # GET /videos/1

@@ -11,11 +11,20 @@
 
   <h3 class='subheader'>One. Word. Sentence. YEAH!</h3>
   <div class="s-input">
-  <form action="">
+<%= form_tag videos_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search], :class => 'p-input' %>
+    <%= submit_tag ">>", :class => 'b-input' %>
+  </p>
+<% end %>
+
+<!--   <form action="">
       <input type="text" class='p-input' placeholder='Choose A Sport'>
       <button class="b-input">></button>
       <div class="clear"></div> 
-  </form>
+  </form> -->
+
+ 
 
   </div>
 
