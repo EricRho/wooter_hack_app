@@ -23,7 +23,6 @@
 			</div>	
 			<div class="login">
 				<div class="login_sub">
-					<!-- <p><a href='/users/edit'>EGGS</a></p> -->
 				</div>
 				<div class="login_sub">
 					<p><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></p>
@@ -31,6 +30,7 @@
 			</div>
 		<% else %>
 			<div class="request">
+				<%= link_to('Add a Video', new_video_path, class: 'request_details') %>
 			</div>	
 			<div class="login">
 				<div class="login_sub ls_plus">
