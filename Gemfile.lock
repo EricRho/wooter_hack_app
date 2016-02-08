@@ -138,6 +138,8 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
+    rails-observers (0.1.2)
+      activemodel (~> 4.0)
     rails_12factor (0.0.2)
       rails_serve_static_assets
       rails_stdout_logging
@@ -199,6 +201,8 @@ GEM
       oauth (~> 0.4.4)
       oauth2 (~> 1.0.0)
       simple_oauth (>= 0.1.5)
+    yt (0.25.22)
+      activesupport
 
 PLATFORMS
   ruby
@@ -217,6 +221,7 @@ DEPENDENCIES
   pg
   puma
   rails (= 4.2.0)
+  rails-observers
   rails_12factor
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
@@ -226,3 +231,4 @@ DEPENDENCIES
   uuidtools
   web-console (~> 2.0)
   youtube_it
+  yt

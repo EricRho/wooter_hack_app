@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
       user.provider = auth.provider
       user.uid = auth.uid
       user.email = auth.info.email
+      user.token = auth['credentials']['token']
       user.password = Devise.friendly_token[0,20]
     end
   end
@@ -26,7 +27,7 @@ class User < ActiveRecord::Base
         user = User.create(name: data["name"],
                            provider:access_token.provider,
                            email: data["email"],
-                           uid: access_token.uid ,
+                           uid: access_token.uid,
                            password: Devise.friendly_token[0,20],
                            )
       end

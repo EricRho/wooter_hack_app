@@ -25,6 +25,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'angularjs-rails'
 
+gem 'rails-observers'
+
+gem 'yt'
+
 gem 'puma'
 
 gem 'faraday'
