@@ -1,31 +1,20 @@
 <p id="notice"><%= notice %></p>
-
+ 
 <p>
-  <strong>Title:</strong>
+  <b>Name:</b>
+  <%= @video.name %>
+</p>
+ 
+<p>
+  <b>Title:</b>
   <%= @video.title %>
 </p>
-
+ 
 <p>
-  <strong>Author:</strong>
-  <%= @video.author %>
+  <b>Content:</b>
+  <%= @video.content %>
 </p>
-
-<p>
-  <strong>Link:</strong>
-  <%= @video.link %>
-</p>
-
-<p>
-  <strong>Duration:</strong>
-  <%= @video.duration %>
-</p>
-
-<p>
-	<strong>Sport</strong>
-	<%= @video.sport %>
-</p>
-
-
+ 
 <h2>Add a comment:</h2>
 <%= form_for([@video, @video.comments.build]) do |f| %>
   <div class="field">
@@ -40,6 +29,6 @@
     <%= f.submit %>
   </div>
 <% end %>
-
-<%= link_to 'Edit', edit_video_path(@video) %> |
-<%= link_to 'Back', videos_path %>
+ 
+<%= link_to 'Edit Post', edit_video_path(@video) %> |
+<%= link_to 'Back to Posts', video_path %> |

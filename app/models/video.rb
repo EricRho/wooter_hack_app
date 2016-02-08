@@ -1,4 +1,5 @@
 class Video < ActiveRecord::Base
+  has_many :comments
   include Filterable
 
   def self.search(search)

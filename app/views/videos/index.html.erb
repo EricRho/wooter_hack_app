@@ -11,78 +11,104 @@
 
   <h3 class='subheader'>One. Word. Sentence. YEAH!</h3>
   <div class="s-input">
-<%= form_tag videos_path, :method => 'get' do %>
-  <p>
-    <%= text_field_tag :search, params[:search], :class => 'p-input' %>
-    <%= submit_tag ">>", :class => 'b-input' %>
-  </p>
-<% end %>
+    <%= form_tag videos_path, :method => 'get' do %>
+    <p>
+      <%= text_field_tag :search, params[:search], :class => 'p-input' %>
+      <%= submit_tag ">>", :class => 'b-input' %>
+    </p>
+    <% end %>
+  </div>
 
 <!--   <form action="">
       <input type="text" class='p-input' placeholder='Choose A Sport'>
       <button class="b-input">></button>
       <div class="clear"></div> 
   </form> -->
-
- 
-
-  </div>
-
 </section>
 
 <!-- <p id="notice"><%= notice %></p> -->
 
-<!-- <div ng-controller='clockCtrl'>
-  {{ clock | date: 'medium'}}
-  <ul ng-repeat='thing in things'>
-    <li>{{ thing.name }}</li>
-  </ul>
-</div> -->
+<div id='wrapper'>
+  <div id="sidebar-wrapper">
+
+    <ul class="sidebar-nav">
+      <li class="sidebar-brand">
+        <a href="/">
+          Proving Grounds
+        </a>
+      </li>
+      <li>
+          <a href="/videos?utf8=✓&search=Basketball&commit=>>">Basketball</a>
+      </li>
+      <li>
+          <a href="/videos?utf8=✓&search=Soccer&commit=>>">Soccer</a>
+      </li>
+      <li>
+          <a href="/videos?utf8=✓&search=Baseball&commit=>>">Baseball</a>
+      </li>
+      <li>
+          <a href="/videos?utf8=✓&search=Football&commit=>>">Football</a>
+      </li>
+  <!--     <li>
+          <a href="#">About</a>
+      </li>
+      <li>
+          <a href="#">Services</a>
+      </li>
+      <li>
+          <a href="#">Contact</a>
+      </li>
+ -->    </ul>
+  </div>
+
+
 
 <!-- Videos -->
-<% if @videos.any? %>
-  <div class="container">
+  <div id='page-content-wrapper'>
+  <div class='container-fluid'
+  <% if @videos.any? %>
 
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-      <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h4 class="modal-title" id="myModalLabel"></h4>
-          </div>
-          <div class="modal-body" style='min-height: 320px;'>
-            <div id='player-wrapper' style='height: 420px;'></div>
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title" id="myModalLabel"></h4>
+            </div>
+            <div class="modal-body" style='min-height: 320px;'>
+              <div id='player-wrapper' style='height: 420px;'></div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-
-
 
     <% @videos.in_groups_of(3) do |group| %>
       <div class="row">
         <% group.each do |video| %>
-          <% if video %>
-            <div class="col-md-4">
-              <div class="yt_video thumbnail" data-toggle='modal' data-target='#myModal' data-show='false'>
-                <%= image_tag "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg", alt: video.title, class: 'yt_preview img-rounded', :"data-uid" => video.uid %>
-                <div class="caption">
-                  <h5><%= video.title %></h5>
-                  <p>Author: <b><%= video.author %></b></p>
-                  <p>Duration: <b><%= video.duration %></b></p>
-                  <p>Sport: <b><%= video.sport %></b></p>
-                  <p><%= link_to 'Edit', edit_video_path(video) %></p>
-                  <p><%= link_to('Delete', video, method: :delete, data: {confirm: 'Are you sure?'})%></p>
+            <% if video %>
+              <div class="col-md-4">
+                  <div class="yt_video thumbnail" data-toggle='modal' data-target='#myModal' data-show='false'>
+                    <%= image_tag "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg", alt: video.title, class: 'yt_preview img-rounded', :"data-uid" => video.uid %>
+                    <div class="caption">
+                      <h5><%= video.title %></h5>
+                      <p>Author: <b><%= video.author %></b></p>
+                      <p>Duration: <b><%= video.duration %></b></p>
+                      <p>Sport: <b><%= video.sport %></b></p>
+                      <p><%= link_to 'Edit', edit_video_path(video) %></p>
+                      <p><%= link_to('Delete', video, method: :delete, data: {confirm: 'Are you sure?'})%></p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          <% end %>
+              <% end %>
+            <% end %>
+          </div>
         <% end %>
       </div>
     <% end %>
   </div>
-<% end %>
+</div>
+
 
 <!-- <h1>Listing Videos</h1>
 <table>
