@@ -1,4 +1,4 @@
-class CustomPublicExceptions < ActionDispatch::CustomPublicExceptions
+class CustomPublicExceptions < ActionDispatch::PublicExceptions
   def call(env)
     status = env['PATH_INFO'][1..-1]
 
