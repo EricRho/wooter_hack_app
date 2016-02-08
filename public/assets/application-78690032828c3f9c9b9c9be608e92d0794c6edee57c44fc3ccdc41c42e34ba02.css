@@ -1,0 +1,266 @@
+/* line 1, /Users/ericrho/Projects/wooterHack/wooter_hack_app/app/assets/stylesheets/scaffolds.scss */
+body {
+  background-color: #fff;
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 9, /Users/ericrho/Projects/wooterHack/wooter_hack_app/app/assets/stylesheets/scaffolds.scss */
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+/* line 15, /Users/ericrho/Projects/wooterHack/wooter_hack_app/app/assets/stylesheets/scaffolds.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 21, /Users/ericrho/Projects/wooterHack/wooter_hack_app/app/assets/stylesheets/scaffolds.scss */
+a {
+  color: #000;
+}
+/* line 24, /Users/ericrho/Projects/wooterHack/wooter_hack_app/app/assets/stylesheets/scaffolds.scss */
+a:visited {
+  color: #666;
+}
+/* line 28, /Users/ericrho/Projects/wooterHack/wooter_hack_app/app/assets/stylesheets/scaffolds.scss */
+a:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+/* line 35, /Users/ericrho/Projects/wooterHack/wooter_hack_app/app/assets/stylesheets/scaffolds.scss */
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+/* line 40, /Users/ericrho/Projects/wooterHack/wooter_hack_app/app/assets/stylesheets/scaffolds.scss */
+#notice {
+  color: green;
+}
+
+/* line 44, /Users/ericrho/Projects/wooterHack/wooter_hack_app/app/assets/stylesheets/scaffolds.scss */
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+/* line 50, /Users/ericrho/Projects/wooterHack/wooter_hack_app/app/assets/stylesheets/scaffolds.scss */
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+/* line 58, /Users/ericrho/Projects/wooterHack/wooter_hack_app/app/assets/stylesheets/scaffolds.scss */
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0px;
+  background-color: #c00;
+  color: #fff;
+}
+/* line 69, /Users/ericrho/Projects/wooterHack/wooter_hack_app/app/assets/stylesheets/scaffolds.scss */
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+/* line 10, /Users/ericrho/Projects/wooterHack/wooter_hack_app/app/assets/stylesheets/videos.scss */
+h1 {
+  font-size: 48px;
+  margin: 0 0 20px 0;
+}
+
+/* line 14, /Users/ericrho/Projects/wooterHack/wooter_hack_app/app/assets/stylesheets/videos.scss */
+h3 {
+  font-size: 24px;
+  margin: 0 0 20px 0;
+}
+
+/* line 18, /Users/ericrho/Projects/wooterHack/wooter_hack_app/app/assets/stylesheets/videos.scss */
+p {
+  font-size: 16px;
+  margin: 0 0 20px 0;
+  line-height: 1.5;
+}
+
+/* line 23, /Users/ericrho/Projects/wooterHack/wooter_hack_app/app/assets/stylesheets/videos.scss */
+.clear {
+  clear: both;
+}
+
+/* line 29, /Users/ericrho/Projects/wooterHack/wooter_hack_app/app/assets/stylesheets/videos.scss */
+.navigation {
+  height: 5vw;
+  padding: 1vw;
+  font-size: 2vw;
+  color: white;
+  position: absolute;
+  background: transparent;
+  width: 100%;
+}
+
+/* line 38, /Users/ericrho/Projects/wooterHack/wooter_hack_app/app/assets/stylesheets/videos.scss */
+.request {
+  position: relative;
+  top: -10px;
+  left: 0;
+  width: 85%;
+  float: left;
+}
+
+/* line 46, /Users/ericrho/Projects/wooterHack/wooter_hack_app/app/assets/stylesheets/videos.scss */
+.request_details {
+  font-size: 16px;
+  color: white !important;
+}
+
+/* line 51, /Users/ericrho/Projects/wooterHack/wooter_hack_app/app/assets/stylesheets/videos.scss */
+.login {
+  position: relative;
+  width: 15%;
+  top: 0;
+  right: 0;
+  float: right;
+}
+
+/* line 58, /Users/ericrho/Projects/wooterHack/wooter_hack_app/app/assets/stylesheets/videos.scss */
+.login_sub {
+  width: 50%;
+  text-align: center;
+  float: left;
+}
+
+/* line 64, /Users/ericrho/Projects/wooterHack/wooter_hack_app/app/assets/stylesheets/videos.scss */
+.ls_plus {
+  width: 100% !important;
+  text-align: right;
+  float: right;
+}
+
+/* line 70, /Users/ericrho/Projects/wooterHack/wooter_hack_app/app/assets/stylesheets/videos.scss */
+.request_details:hover,
+.request_details:focus,
+.request_details:visited,
+.powered > a,
+.powered > a:hover,
+.powered > a:focus,
+.powered > a:visited,
+.login_sub > p > a,
+.login_sub > p > a:hover,
+.login_sub > p > a:focus,
+.login_sub > p > a:visited {
+  color: white;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+/* line 89, /Users/ericrho/Projects/wooterHack/wooter_hack_app/app/assets/stylesheets/videos.scss */
+.hero {
+  background-image: url("hero_image.png");
+  height: 42vw;
+  min-height: 50vh;
+  background-size: cover;
+  background-position: 100% 100%;
+  width: 100%;
+}
+
+/* line 98, /Users/ericrho/Projects/wooterHack/wooter_hack_app/app/assets/stylesheets/videos.scss */
+.title {
+  width: 39vw;
+  margin: 0 auto;
+  padding: 10vw 0 8vw;
+}
+
+/* line 105, /Users/ericrho/Projects/wooterHack/wooter_hack_app/app/assets/stylesheets/videos.scss */
+.header, .powered {
+  color: white;
+  margin: 0 auto 1vw auto;
+}
+
+/* line 110, /Users/ericrho/Projects/wooterHack/wooter_hack_app/app/assets/stylesheets/videos.scss */
+.header {
+  font-size: 6vw;
+  text-align: center;
+  float: left;
+  width: 100%;
+  font-family: 'Oswald' , sans-serif;
+}
+
+/* line 118, /Users/ericrho/Projects/wooterHack/wooter_hack_app/app/assets/stylesheets/videos.scss */
+.powered {
+  font-size: 1vw;
+  text-align: right;
+  width: 100%;
+  float: right;
+}
+
+/* line 125, /Users/ericrho/Projects/wooterHack/wooter_hack_app/app/assets/stylesheets/videos.scss */
+.subheader {
+  width: 50%;
+  color: white;
+  font-size: 2vw;
+  text-align: center;
+  margin: 0 auto 2vw auto;
+}
+
+/* line 133, /Users/ericrho/Projects/wooterHack/wooter_hack_app/app/assets/stylesheets/videos.scss */
+.s-input {
+  width: 36%;
+  margin: 0 auto;
+  -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.4);
+}
+
+/* line 140, /Users/ericrho/Projects/wooterHack/wooter_hack_app/app/assets/stylesheets/videos.scss */
+.p-input {
+  width: 90%;
+  float: left;
+  border: none;
+  height: 3vw;
+  font-size: 1.25vw;
+  padding-left: 1vw;
+  border-bottom-left-radius: .2vw;
+  border-top-left-radius: .2vw;
+}
+
+/* line 151, /Users/ericrho/Projects/wooterHack/wooter_hack_app/app/assets/stylesheets/videos.scss */
+.b-input {
+  border: none;
+  background-color: white;
+  width: 10%;
+  height: 3vw;
+  font-size: 1.5vw;
+  color: rgba(0, 0, 0, 0.35);
+  border-bottom-right-radius: .2vw;
+  border-top-right-radius: .2vw;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+
+ */
+
