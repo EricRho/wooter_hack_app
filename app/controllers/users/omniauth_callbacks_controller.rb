@@ -12,6 +12,10 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
     end
   end
 
+  def failure
+    redirect_to root_path
+  end
+
   private
 
   # def make_admin
