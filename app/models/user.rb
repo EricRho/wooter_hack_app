@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
       user.uid = auth.uid
       user.email = auth.info.email
       user.name = auth.info['name']
-      user.token = auth['credentials']['token']
+      # user.token = auth['credentials']['token']
       user.password = Devise.friendly_token[0,20]
 
       # if user.email == 'eric.rho.87@gmail.com'
