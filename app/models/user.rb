@@ -17,11 +17,11 @@ class User < ActiveRecord::Base
       user.token = auth['credentials']['token']
       user.password = Devise.friendly_token[0,20]
 
-      if user.email == 'eric.rho.87@gmail.com'
-        user.admin = true
-      else
-        user.admin = false
-      end
+      # if user.email == 'eric.rho.87@gmail.com'
+      #   user.admin = true
+      # else
+      #   user.admin = false
+      # end
     end
   end
 
