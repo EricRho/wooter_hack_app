@@ -1,52 +1,22 @@
 <!DOCTYPE html>
 <html ng-app='provingGrounds'>
-<head>
-  <title>WooterHackApp</title>
-  <!-- <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %> -->
-  <!-- <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %> -->
+	<head>
+		<title>WooterHackApp</title>
+		<!-- <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %> -->
+		<!-- <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %> -->
+		<%= stylesheet_link_tag 'application', params[:controller], :media => 'all' %>
+		<%= javascript_include_tag 'application', params[:controller] %>
+		<%= csrf_meta_tags %>
+		<!-- Bootstrap -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<link href='https://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+		<script src="https://www.google.com/jsapi" type="text/javascript"></script>
+		<script src="https://www.youtube.com/iframe_api"></script>
+		<link href="/assets/simple-sidebar.css" rel="stylesheet">
+	</head>
 
-  <%= stylesheet_link_tag 'application', params[:controller], :media => 'all' %>
-  <%= javascript_include_tag 'application', params[:controller] %>
-
-  <%= csrf_meta_tags %>
-  <!-- Bootstrap -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  <link href='https://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>  
-  <script src="https://www.google.com/jsapi" type="text/javascript"></script>
-  <script src="https://www.youtube.com/iframe_api"></script>
-  <link href="/assets/simple-sidebar.css" rel="stylesheet">
-</head>
-<body>
-
-	<div class="navigation">
-		<% if user_signed_in? %>
-			<div class="request">
-
-					<% if current_user.admin == true %>
-						<%= link_to 'Add Video', new_video_path, class: 'request_details' %>
-					<% end %>
-				Welcome, <%= current_user.name %>!
-			</div>	
-			<div class="login">
-				<div class="login_sub">
-				</div>
-				<div class="login_sub">
-					<p><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></p>
-				</div>
-			</div>
-		<% else %>
-			<div class="request">
-			</div>	
-			<div class="login">
-				<div class="login_sub ls_plus">
-					<p><%= link_to('Sign in with Google', user_omniauth_authorize_path(:google_oauth2)) %></p>
-				</div>
-			</div>	
-		<% end %>
-	</div>
-
-<%= yield %>
-
-</body>
+	<body>
+		<%= yield %>
+	</body>
 </html>

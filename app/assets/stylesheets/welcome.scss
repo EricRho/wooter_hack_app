@@ -2,6 +2,112 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-h1 {
-	color: blue !important;
+body {
+	h1 {
+		font-size: 48px;
+		margin: 0 0 20px 0;
+		font-family: Oswald, 'sans-serif';
+	}
+
+	h3 {
+		font-size: 24px;
+		margin: 0 0 20px 0;
+	}
+
+	p {
+		font-size: 16px;
+		margin: 0 0 20px 0;
+		line-height: 1.5;
+	}
+
+	.clear {
+		clear: both;
+	}
+
+	.hero {
+		z-index: 1;		
+		width: 100%;		
+		min-height: 100vh;
+		position: absloute;
+		background-size: cover;
+		background-position: 100% 100%;
+		background-image: url('hero_image.png');
+
+
+		.title {
+			width: 600px;
+			margin: 0 auto;
+			padding: 10vw 0 8vw;
+		}
+
+		.header{
+			font-size: 93px;
+			color:white;
+			margin-bottom: 0px;
+		}
+
+		.powered{
+			width:100%;
+			text-align:right;
+			color:white;
+			margin-left: -10px;
+			font-size: 20px;
+
+			a{
+				text-decoration: none;
+				img{
+					height: 20px;
+    				margin-top: -8.5px;
+				}
+			}
+
+			a:hover{
+				background-color: transparent;
+			}
+		}
+		
+		.subHeader {
+			width: 100%;
+			color: white;
+			font-size: 2vw;
+			text-align: center;
+			margin: 30px auto;
+		}
+
+		.s-input{
+			width: 600px;
+			margin: 0 auto;
+
+			.p-input{
+				width: 90%;
+				float: left;
+				height: 40px;
+				border: none;
+				padding-left: 10px;
+				color: rgba(0,0,0,.7);
+				border-top-left-radius: 5px;
+				border-bottom-left-radius: 0px;
+			}
+
+			.p-input:focus,
+			.b-input:focus{
+				outline:0;
+			}
+
+			.b-input{
+				width: 10%;
+				float: left;
+				height: 40px;
+				border: none;
+				font-weight: bold;
+				color: rgba(0,0,0,.7);
+				background-color: white;
+				border-top-right-radius: 5px;
+				border-bottom-right-radius: 5px;				
+			}
+
+		}
+
+	}
+
 }

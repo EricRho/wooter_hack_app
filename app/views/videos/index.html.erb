@@ -1,108 +1,88 @@
-<!-- <section class="hero">
-  <div class="title">
-    <h1 class='header'>Proving Grounds</h1>
-    <p  class='powered'>Powered by 
-      <a href='http://wooter.co' target='_blank'>
-        <img alt="Wooter Logo White" src="/assets/wooter.png" style='height: 20px;'>
-      </a>
-    </p>  
-    <div class="clear"></div>  
-  </div>
-
-  <h3 class='subheader'>Watch Free Sports Guides and Tutorials.</h3>
-  <div class="s-input">
-    <%= form_tag videos_path, :method => 'get' do %>
-    <p>
-      <%= text_field_tag :search, params[:search], :class => 'p-input' %>
-      <%= submit_tag ">", :class => 'b-input' %>
-    </p>
+<div class="navigation">
+  <% if user_signed_in? %>
+  <div class="request">
+    <% if current_user.admin == true %>
+    <%= link_to 'Add Video', new_video_path, class: 'request_details' %>
     <% end %>
+    Welcome, <%= current_user.name %>!
   </div>
-</section> -->
-
-<!--   <form action="">
-      <input type="text" class='p-input' placeholder='Choose A Sport'>
-      <button class="b-input">></button>
-      <div class="clear"></div> 
-  </form> -->
-<!-- </section> -->
-
-<!-- <p id="notice"><%= notice %></p> -->
-
-
-
+  <div class="login">
+    <div class="login_sub">
+    </div>
+    <div class="login_sub">
+      <p><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></p>
+    </div>
+  </div>
+  <% else %>
+  <div class="request">
+  </div>
+  <div class="login">
+    <div class="login_sub ls_plus">
+      <p><%= link_to('Sign in with Google', user_omniauth_authorize_path(:google_oauth2)) %></p>
+    </div>
+  </div>
+  <% end %>
+</div>
 <script type="text/javascript">
-  
-  $(document).ready(function() {
 
-  setHeight($('.filter_menu'), $('.filter_results'));
-
-  // When the window is resized the height might
-  // change depending on content. So to be safe
-  // we rerun the function
-  $(window).on(resize, function() {
-      setHeight($('#.filter_menu'), $('.filter_results'));        
-  });
-
+$(document).ready(function() {
+setHeight($('.filter_menu'), $('.filter_results'));
+// When the window is resized the height might
+// change depending on content. So to be safe
+// we rerun the function
+$(window).on(resize, function() {
+setHeight($('#.filter_menu'), $('.filter_results'));
 });
-
+});
 // sets height of element 1 to equal the height of element 2
 function setHeight(elem1, elem2) {
-  var height = elem2.height()
-  elem1.css('height', height); 
+var height = elem2.height()
+elem1.css('height', height);
 }
-
 </script>
-
 <section class="new_body">
   <div class="rows">
     <div class="col-sm-2 filter_menu">
       <h1 class='chosen_sport'>Proving Grounds</h1>
-    <ul class="techniques">
-      <li class="types">
+      <ul class="techniques">
+        <li class="types">
           <a href="/videos?utf8=✓&search=Basketball&commit=>>">Basketball</a>
-      </li>
-      <li class="types">
+        </li>
+        <li class="types">
           <a href="/videos?utf8=✓&search=Soccer&commit=>>">Soccer</a>
-      </li>
-      <li class="types">
+        </li>
+        <li class="types">
           <a href="/videos?utf8=✓&search=Baseball&commit=>>">Baseball</a>
-      </li>
-      <li class="types">
+        </li>
+        <li class="types">
           <a href="/videos?utf8=✓&search=Football&commit=>>">Football</a>
-      </li>
-
-    <ul>
-  </div>
-
-    <div class="col-sm-10 filter_results">
-
-
-<!-- Videos -->
-  <div id='page-content-wrapper'>
-  <div class='container-fluid'
-  <% if @videos.any? %>
-
-      <!-- Modal -->
-      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-        <div class="modal-dialog modal-lg" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-              <h4 class="modal-title" id="myModalLabel"></h4>
-            </div>
-            <div class="modal-body" style='min-height: 320px;'>
-              <div id='player-wrapper' style='height: 420px;'></div>
-            </div>
-          </div>
+        </li>
+        <ul>
         </div>
-      </div>
-
-    <% @videos.in_groups_of(3) do |group| %>
-      <div class="row">
-        <% group.each do |video| %>
-            <% if video %>
-              <div class="col-md-4">
+        <div class="col-sm-10 filter_results">
+          <!-- Videos -->
+          <div id='page-content-wrapper'>
+            <div class='container-fluid'
+              <% if @videos.any? %>
+              <!-- Modal -->
+              <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog modal-lg" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title" id="myModalLabel"></h4>
+                    </div>
+                    <div class="modal-body" style='min-height: 320px;'>
+                      <div id='player-wrapper' style='height: 420px;'></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <% @videos.in_groups_of(3) do |group| %>
+              <div class="row">
+                <% group.each do |video| %>
+                <% if video %>
+                <div class="col-md-4">
                   <div class="yt_video thumbnail" data-toggle='modal' data-target='#myModal' data-show='false'>
                     <%= image_tag "https://img.youtube.com/vi/#{video.uid}/mqdefault.jpg", alt: video.title, class: 'yt_preview img-rounded', :"data-uid" => video.uid %>
                     <div class="caption">
@@ -115,87 +95,51 @@ function setHeight(elem1, elem2) {
                     </div>
                   </div>
                 </div>
+                <% end %>
+                <% end %>
+              </div>
               <% end %>
+            </div>
             <% end %>
           </div>
-        <% end %>
+        </div>
+        <!-- <h1>Listing Videos</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Author</th>
+              <th>Link</th>
+              <th>Duration</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @videos.each do |video| %>
+            <tr>
+              <td><%= video.title %></td>
+              <td><%= video.author %></td>
+              <td><%= video.link %></td>
+              <td><%= video.duration %></td>
+              <td><%= link_to 'Show', video %></td>
+              <td><%= link_to 'Edit', edit_video_path(video) %></td>
+              <td><%= link_to 'Destroy', video, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table> -->
       </div>
-    <% end %>
-  </div>
-</div>
-
-
-<!-- <h1>Listing Videos</h1>
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Author</th>
-      <th>Link</th>
-      <th>Duration</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @videos.each do |video| %>
-      <tr>
-        <td><%= video.title %></td>
-        <td><%= video.author %></td>
-        <td><%= video.link %></td>
-        <td><%= video.duration %></td>
-        <td><%= link_to 'Show', video %></td>
-        <td><%= link_to 'Edit', edit_video_path(video) %></td>
-        <td><%= link_to 'Destroy', video, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table> -->
-
     </div>
-  </div>
-  <div class="clear"></div>
-</section>
-
-
-
-
-
-</style>
-
-<footer>
-  <div class="wooter_mention">
-    <p>
-      <a href="http://wooter.co">
-        <img src="assets/powered.png" alt="Wooter Logo">
-      </a>
-    </p>
     <div class="clear"></div>
-  </div>
-</footer>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  </section>
+  </style>
+  <footer>
+    <div class="wooter_mention">
+      <p>
+        <a href="http://wooter.co">
+          <img src="assets/powered.png" alt="Wooter Logo">
+        </a>
+      </p>
+      <div class="clear"></div>
+    </div>
+  </footer>
