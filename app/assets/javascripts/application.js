@@ -19,4 +19,3 @@
 //= require jquery.bind_with_delay
 //= require yt_player
 //= require_tree ./angular
-//= require_tree .
