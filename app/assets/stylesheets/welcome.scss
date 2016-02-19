@@ -1,0 +1,48 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+	h1 {
+		font-size: 48px;
+		margin: 0 0 20px 0;
+	}
+
+	h3 {
+		font-size: 24px;
+		margin: 0 0 20px 0;
+	}
+
+	p {
+		font-size: 16px;
+		margin: 0 0 20px 0;
+		line-height: 1.5;
+	}
+
+	.clear {
+		clear: both;
+	}
+
+	.hero {
+		background-image: url('hero_image.png');
+		min-height: 50vh;
+		background-size: cover;
+		background-position: 100% 100%;
+		width: 100%;
+
+		.title {
+			width: 39vw;
+			margin: 0 auto;
+			padding: 10vw 0 8vw;
+		}
+
+		.subHeader {
+			width: 50%;
+			color: white;
+			font-size: 2vw;
+			text-align: center;
+			margin: 0 auto 2vw auto;
+		}
+	}
+
+}
