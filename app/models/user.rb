@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
     :omniauth_providers => [:google_oauth2]
 
   has_many :comments
+  has_many :videos
 
   # Proper method to get info from Auth Hash
   def self.from_omniauth(auth)
