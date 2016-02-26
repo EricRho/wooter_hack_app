@@ -1,62 +1,51 @@
 <div class="navigation">
-  <% if user_signed_in? %>
-  <div class="request">
-    <% if current_user.admin == true %>
-    <%= link_to 'Add Video', new_video_path, class: 'request_details' %>
-    <% end %>
-    Welcome, <%= current_user.name %>!
-  </div>
-  <div class="login">
-    <div class="login_sub">
-    </div>
-    <div class="login_sub">
-      <p><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></p>
-    </div>
-  </div>
-  <% else %>
-  <div class="request">
-  </div>
-  <div class="login">
-    <div class="login_sub ls_plus">
-      <p><%= link_to('Sign in with Google', user_omniauth_authorize_path(:google_oauth2)) %></p>
-    </div>
-  </div>
-  <% end %>
-</div>
-<script type="text/javascript">
 
-$(document).ready(function() {
-setHeight($('.filter_menu'), $('.filter_results'));
-// When the window is resized the height might
-// change depending on content. So to be safe
-// we rerun the function
-$(window).on(resize, function() {
-setHeight($('#.filter_menu'), $('.filter_results'));
-});
-});
-// sets height of element 1 to equal the height of element 2
-function setHeight(elem1, elem2) {
-var height = elem2.height()
-elem1.css('height', height);
-}
-</script>
+  <h1>Proving Grounds</h1>
+
+  <div class='s-input'>
+    <%= form_tag videos_path, :method => 'get' do %>
+    <p>
+      <%= text_field_tag :search, params[:search], :class => 'p-input', :placeholder => 'Choose A Sport' %>
+      <%= submit_tag ">", :class => 'b-input' %>
+    </p>
+    <% end %>
+  </div>
+
+ <% if user_signed_in? %>
+
+    <div class="request">
+      <% if current_user.admin == true %>
+      <%= link_to 'Add Video', new_video_path, class: 'request_details' %>
+      <% end %>
+      <%= current_user.name %>
+    </div>
+
+    <div class="logout">
+        <p><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></p>
+    </div>
+
+  <% else %>
+    <div class="login">
+      <p><%= link_to('Sign In With Google', user_omniauth_authorize_path(:google_oauth2)) %></p>
+    </div>
+  <% end %> 
+  <div class="clear"></div>
+</div>
+
+
 <section class="new_body">
   <div class="rows">
     <div class="col-sm-2 filter_menu">
-      <h1 class='chosen_sport'>Proving Grounds</h1>
-      <ul class="techniques">
-        <li class="types">
-          <a href="/videos?utf8=✓&search=Basketball&commit=>>">Basketball</a>
-        </li>
-        <li class="types">
-          <a href="/videos?utf8=✓&search=Soccer&commit=>>">Soccer</a>
-        </li>
-        <li class="types">
-          <a href="/videos?utf8=✓&search=Baseball&commit=>>">Baseball</a>
-        </li>
-        <li class="types">
-          <a href="/videos?utf8=✓&search=Football&commit=>>">Football</a>
-        </li>
+      <ul>
+        
+          <a href="/videos?utf8=✓&search=Basketball&commit=>>"><li>Basketball</li></a>
+      
+          <a href="/videos?utf8=✓&search=Soccer&commit=>>"><li>Soccer</li></a>
+       
+          <a href="/videos?utf8=✓&search=Baseball&commit=>>"><li>Baseball</li></a>
+   
+          <a href="/videos?utf8=✓&search=Football&commit=>>"><li>Football</li></a>
+       
         <ul>
         </div>
         <div class="col-sm-10 filter_results">
@@ -102,6 +91,9 @@ elem1.css('height', height);
             </div>
             <% end %>
           </div>
+
+
+
         </div>
         <!-- <h1>Listing Videos</h1>
         <table>
@@ -132,14 +124,30 @@ elem1.css('height', height);
     </div>
     <div class="clear"></div>
   </section>
-  </style>
   <footer>
-    <div class="wooter_mention">
       <p>
         <a href="http://wooter.co">
           <img src="assets/powered.png" alt="Wooter Logo">
         </a>
       </p>
       <div class="clear"></div>
-    </div>
   </footer>
+
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+setHeight($('.filter_menu'), $('.filter_results'));
+// When the window is resized the height might
+// change depending on content. So to be safe
+// we rerun the function
+$(window).on(resize, function() {
+setHeight($('#.filter_menu'), $('.filter_results'));
+});
+});
+// sets height of element 1 to equal the height of element 2
+function setHeight(elem1, elem2) {
+var height = elem2.height()
+elem1.css('height', height);
+}
+</script>

@@ -4,14 +4,167 @@
 
 
 
-
+.clear{
+	clear: both;
+}
 
 .navigation{
-	position: relative;
+	position: fixed;
 	z-index: 100;
 	width: 100%;
-	height: 5vh;
-	min-height: 64px;
+	height: 64px;
 	background-color: #ff5f00;
-	box-shadow: 0 0 1px 10px #ff5f00; 
+	box-shadow: 0 0 1px 1px #ff5f00; 
+
+	h1{
+		margin: 0px;
+		font-family: 'Oswald', sans-serif;
+		color: white;
+		height: 100%;
+		padding: 10px 0px 10px 30px;
+		float: left;
+		width: 25%;
+		text-align: left;
+	}
+
+	.s-input{
+		width: 50%;	
+		margin-right: 10%;
+		height: 100%;
+		float: left;
+
+		.p-input{
+			width: 90%;
+			float: left;
+			height: 40px;
+			border: none;
+			padding-left: 10px;
+			color: rgba(0,0,0,.7);
+			border-top-left-radius: 5px;
+			border-bottom-left-radius: 5px;
+		}
+
+		.p-input:focus,
+		.b-input:focus{
+			outline:0;
+		}
+
+		.b-input{
+			width: 10%;
+			float: left;
+			height: 40px;
+			border: none;
+			font-weight: bold;
+			color: rgba(0,0,0,.7);
+			background-color: white;
+			border-top-right-radius: 5px;
+			border-bottom-right-radius: 5px;				
+		}
+
+	}
+
+	.request, .logout, .login{
+		width: 7.5%;
+		float: left;
+		color: white;
+		font-weight: bold;
+		height: 64px;
+		padding: 22px 0px;
+
+		a{
+			color:white!important;
+			text-decoration:none;
+		}
+
+		a:hover{
+			color:white!important;
+			text-decoration:none;
+		}
+
+	}
+
+	.request{
+		text-align: right;
+	}
+
+	.logout, .login{
+		text-align: center;
+	}
+
+	.login{
+		width: 15%!important;
+	}
+}
+
+.rows{
+	position:relative;
+	padding-top: 64px;
+	
+	.filter_menu{
+	  position: relative; 
+	  background-color: #eee;
+	  padding: 0px;
+
+	  ul{
+	  	position: fixed;
+    	width: 16.66666667%;
+      	padding: 0px;
+	  	margin: 0px;
+
+	  	a{
+	  		color: black;
+	  		font-weight: bold;
+	  		text-align: left;
+ 	
+ 			li{
+ 				list-style-type:none;
+	  			padding: 15px 0px 15px 30px;
+ 			}
+
+ 			li:hover{
+	  			background-color: #ff5f00;
+ 			}
+	  	}
+
+	  	a:hover{
+	  		background-color: #ff5f00;
+	  		color:white!important;
+	  		text-decoration: none;
+	  	}
+	  }
+	}
+
+	.filter_results{
+		height: 1000px;
+		padding: 0px;
+	
+
+
+	}
+}
+
+
+footer{
+	background-color: black;
+	padding: 0px;
+	height: 64px;
+
+	p{
+		text-align: center;
+		height: 20px;
+		padding: 22px 0px;
+		margin: 0px;	
+		a{
+			text-decoration: none;
+			
+			img{
+				height: 20px;
+			}
+		}
+		a:hover{
+			text-decoration: none;
+		}
+	}
+
+
 }

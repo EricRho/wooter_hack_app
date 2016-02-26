@@ -12,7 +12,7 @@
 	<div class='s-input'>
 		<%= form_tag videos_path, :method => 'get' do %>
 		<p>
-			<%= text_field_tag :search, params[:search], :class => 'p-input' %>
+      		<%= text_field_tag :search, params[:search], :class => 'p-input', :placeholder => 'Choose A Sport' %>
 			<%= submit_tag ">", :class => 'b-input' %>
 		</p>
 		<% end %>
