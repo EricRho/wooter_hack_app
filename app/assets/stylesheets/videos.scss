@@ -137,12 +137,60 @@
 	.filter_results{
 		height: 1000px;
 		padding: 0px;
-	
+		
+		.col-md-4{
+			min-width: 330px;
+			
+			.yt_video{
+				padding: 0px;
+				background-color: #eee;
+				border-radius: 5px;
+
+				.yt_preview{
+					width: 300px;
+					border-top-left-radius: 5px;
+					border-top-right-radius: 5px;
+				}
+
+			}		
+		}
+
+
 
 
 	}
 }
 
+
+.caption{
+	margin-top: -10px;
+	
+	ul{
+		width: 300px;
+		padding: 0px;
+
+		li{
+			display: inline-block;
+			text-decoration: none;
+			width: 75px;
+			float:left;
+			text-align: center;
+			color:white;
+			font-weight: bold;
+			background-color: #303030;
+			padding: 15px 0px;
+		}
+		li:hover{
+			background-color: #ff5f00;
+		}
+	}
+
+	.appear{
+		width: 100%;
+		text-align:center;
+		padding: 15px 0px;
+	}
+}
 
 footer{
 	background-color: black;
@@ -165,6 +213,4 @@ footer{
 			text-decoration: none;
 		}
 	}
-
-
 }
