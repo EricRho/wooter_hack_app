@@ -98,7 +98,7 @@
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def video_params
-    params.require(:video).permit(:title, :author, :link, :duration, :sport)
+    params.require(:video).permit(:title, :author, :link, :duration, :sport, :subcategory)
   end
 
   def authorize_admin
