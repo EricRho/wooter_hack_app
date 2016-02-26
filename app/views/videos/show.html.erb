@@ -25,6 +25,11 @@
 	<%= @video.sport %>
 </p>
 
+<p>
+  <strong>Skill</strong>
+  <%= @video.skill %>
+</p>
+
 
 <h2>Add a comment:</h2>
 <%= form_for([@video, @video.comments.build]) do |f| %>

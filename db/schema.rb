@@ -84,11 +84,11 @@ ActiveRecord::Schema.define(version: 20160226181811) do
     t.string   "author"
     t.string   "link"
     t.string   "duration"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string   "sport"
     t.string   "uid"
-    t.string   "subcategory"
+    t.string   "skill"
   end
 
   add_index "videos", ["uid"], name: "index_videos_on_uid", using: :btree
