@@ -74,16 +74,18 @@
                     <div class="caption">
                       <ul>
                         <li class='category1'>Skill</li>
-                        <li class='category2'>Title</li>
-                        <li class='category3'>Author</li>
-                        <li class='category4'>Time</li>
+                        <li class='category2'>Time</li>
+                        <li class='category3'>Rating</li>
+                        <li class='category5'>Author</li>
+                        <li class='category4'>Title</li>
                       </ul>
                       <div class="clear"></div>
 
-                      <p class='appear appear1 '><b><%= video.sport %>, <%= video.skill %></b></p>
-                      <p class='appear appear2 hide'><b><%= video.title %></b></p>
-                      <p class='appear appear3 hide'><b><%= video.author %></b></p>
-                      <p class='appear appear4 hide'><b><%= video.duration %></b></p>
+                      <p class='appear appear1 '><b><%= video.sport %></b> - <%= video.skill %></p>
+                      <p class='appear appear2 hide'><b><%= video.duration %></b></p>
+                      <p class='appear appear3 hide'><b>Rating / 5</b></p>
+                      <p class='appear appear4 hide'><b><%= video.author %></b></p>
+                      <p class='appear appear5 hide'><b><%= video.title %></b></p>
 
                       <script>
                         
@@ -100,7 +102,10 @@
                                  function(){ $('.appear1').addClass('hide'); $('.appear4').removeClass('hide'); },
                                  function(){ $('.appear4').addClass('hide'); $('.appear1').removeClass('hide'); }
                           )
-
+                          $('.category5').hover(
+                                 function(){ $('.appear1').addClass('hide'); $('.appear5').removeClass('hide'); },
+                                 function(){ $('.appear5').addClass('hide'); $('.appear1').removeClass('hide'); }
+                          )
 
 
 
