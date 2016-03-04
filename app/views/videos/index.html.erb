@@ -31,7 +31,7 @@
  <div class="mobile_header_login">
    <% if user_signed_in? %>
 
-      <div class="request_desk">
+      <div class="request request_desk">
         <% if current_user.admin == true %>
         <%= link_to 'Add Video', new_video_path, class: 'request_details' %>
         <% end %>
@@ -144,9 +144,11 @@
 
                       </script>
 
+                      <% if current_user.admin == true %>
+                        <p><%= link_to 'Edit', edit_video_path(video) %></p>
+                        <p><%= link_to('Delete', video, method: :delete, data: {confirm: 'Are you sure?'})%></p>
+                      <% end %>
 
-                      <p><%= link_to 'Edit', edit_video_path(video) %></p>
-                      <p><%= link_to('Delete', video, method: :delete, data: {confirm: 'Are you sure?'})%></p>
                     </div>                   
 
                 
