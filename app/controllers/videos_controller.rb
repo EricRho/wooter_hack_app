@@ -24,7 +24,7 @@
   def new
     # @video = Video.new
     # if current_user.admin == true
-    if current_user.admin == false
+    if current_user.admin == true
       @video = Video.new
     else
       alert('Admins only')
@@ -39,7 +39,7 @@
   # POST /videos.json
   def create
     # if current_user.admin == true
-    if current_user.admin == false
+    if current_user.admin == true
       @video = Video.new(video_params)
       respond_to do |format|
         if @video.save
