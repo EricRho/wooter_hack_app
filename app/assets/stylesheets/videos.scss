@@ -340,9 +340,14 @@
 	}
 
 	.appear{
-		width: 100%;
+		width: 90%;
+		margin: 0 auto;
 		text-align:center;
 		padding: 15px 0px;
+	    white-space: nowrap;
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+
 	}
 }
 
