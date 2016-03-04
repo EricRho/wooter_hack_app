@@ -1,5 +1,22 @@
 
 <div class="navigation">
+  <div class="mobile_header_slide">
+    <p>O</p>
+  </div>
+
+<script>
+  $('.mobile_header_slide').click(function(){ 
+    if(!($('.filter_menu').hasClass('animations'))){
+      $('.filter_menu').addClass('animations'); 
+      $('.filter_menu').removeClass('animations_remove'); 
+    }
+    else{
+      $('.filter_menu').removeClass('animations'); 
+      $('.filter_menu').addClass('animations_remove'); 
+    }    
+  }); 
+
+</script>
 
   <h1>Proving Grounds</h1>
 
@@ -11,35 +28,58 @@
     </p>
     <% end %>
   </div>
+ <div class="mobile_header_login">
+   <% if user_signed_in? %>
 
- <% if user_signed_in? %>
+  <!--     <div class="request">
+        <% if current_user.admin == true %>
+        <%= link_to 'Add Video', new_video_path, class: 'request_details' %>
+        <% end %>
+        <%= current_user.name %>
+      </div>
+   -->
+      <div class="request request_desk">
+        <% if current_user.admin == false %>
+        <%= link_to 'Add Video', new_video_path, class: 'request_details' %>
+        <% end %>
+      </div>
 
-    <div class="request">
-      <% if current_user.admin == true %>
-      <%= link_to 'Add Video', new_video_path, class: 'request_details' %>
-      <% end %>
-      <%= current_user.name %>
-    </div>
+      <div class="logout">
+          <p><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></p>
+      </div>
+      
+      <div class="request request_mobile">
+        <% if current_user.admin == true %>
+        <%= link_to 'Add Video', new_video_path, class: 'request_details' %>
+        <% end %>
+        <%= current_user.name %>
+      </div>
 
-    <div class="logout">
-        <p><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></p>
-    </div>
-
-  <% else %>
-    <div class="login">
-      <p><%= link_to('Sign In With Google', user_omniauth_authorize_path(:google_oauth2)) %></p>
-    </div>
-  <% end %> 
-  <div class="clear"></div>
+    <% else %>
+      <div class="login">
+        <p><%= link_to('Sign In With Google', user_omniauth_authorize_path(:google_oauth2)) %></p>
+      </div>
+    <% end %> 
+    <div class="clear"></div>
+  </div>
 </div>
 
 
 
 <section class="new_body">
   <div class="rows">
-    <div class="col-sm-2 filter_menu">
+    <div class="col-sm-2 filter_menu md-whiteframe-2dp">
       <ul>
-        
+          <li class='searching'>  
+            <div class='s-input'>
+              <%= form_tag videos_path, :method => 'get' do %>
+              <p>
+                <%= text_field_tag :search, params[:search], :class => 'p-input', :placeholder => 'Choose A Sport' %>
+                <%= submit_tag ">", :class => 'b-input' %>
+              </p>
+              <% end %>
+            </div>  
+          </li>      
           <a href="/videos?utf8=✓&search=Basketball&commit=>>"><li>Basketball</li></a>
       
           <a href="/videos?utf8=✓&search=Soccer&commit=>>"><li>Soccer</li></a>
@@ -53,13 +93,12 @@
         <div class="col-sm-10 filter_results">
           <!-- Videos -->
           <div id='page-content-wrapper'>
-            <div class='container-fluid'
+            <div class='container-fluid'>
               
               <% if @videos.any? %>
 
-              <% @videos.in_groups_of(3) do |group| %>
+              <% @videos.in_groups_of(1) do |group| %>
               
-              <div class="row">
                 
                 <% group.each do |video| %>
                 
@@ -73,38 +112,38 @@
                 
                     <div class="caption">
                       <ul>
-                        <li class='category1'>Skill</li>
-                        <li class='category2'>Time</li>
-                        <li class='category3'>Rating</li>
-                        <li class='category5'>Author</li>
-                        <li class='category4'>Title</li>
+                        <li class='category1<%=video.id%>'>Skill</li>
+                        <li class='category2<%=video.id%>'>Time</li>
+                        <li class='category3<%=video.id%>'>Rating</li>
+                        <li class='category5<%=video.id%>'>Author</li>
+                        <li class='category4<%=video.id%>'>Title</li>
                       </ul>
                       <div class="clear"></div>
 
-                      <p class='appear appear1 '><b><%= video.sport %></b> - <%= video.skill %></p>
-                      <p class='appear appear2 hide'><b><%= video.duration %></b></p>
-                      <p class='appear appear3 hide'><b>Rating / 5</b></p>
-                      <p class='appear appear4 hide'><b><%= video.author %></b></p>
-                      <p class='appear appear5 hide'><b><%= video.title %></b></p>
+                      <p class='appear appear1<%=video.id%> '><b><%= video.sport %></b> - <%= video.skill %></p>
+                      <p class='appear appear2<%=video.id%> hide'><b><%= video.duration %></b></p>
+                      <p class='appear appear3<%=video.id%> hide'><b>Rating / 5</b></p>
+                      <p class='appear appear4<%=video.id%> hide'><b><%= video.author %></b></p>
+                      <p class='appear appear5<%=video.id%> hide'><b><%= video.title %></b></p>
 
                       <script>
                         
                      
-                          $('.category2').hover(
-                                 function(){ $('.appear1').addClass('hide'); $('.appear2').removeClass('hide'); },
-                                 function(){ $('.appear2').addClass('hide'); $('.appear1').removeClass('hide'); }
+                          $('.category2<%=video.id%>').hover(
+                                 function(){ $('.appear1<%=video.id%>').addClass('hide'); $('.appear2<%=video.id%>').removeClass('hide'); },
+                                 function(){ $('.appear2<%=video.id%>').addClass('hide'); $('.appear1<%=video.id%>').removeClass('hide'); }
                           )
-                          $('.category3').hover(
-                                 function(){ $('.appear1').addClass('hide'); $('.appear3').removeClass('hide'); },
-                                 function(){ $('.appear3').addClass('hide'); $('.appear1').removeClass('hide'); }
+                          $('.category3<%=video.id%>').hover(
+                                 function(){ $('.appear1<%=video.id%>').addClass('hide'); $('.appear3<%=video.id%>').removeClass('hide'); },
+                                 function(){ $('.appear3<%=video.id%>').addClass('hide'); $('.appear1<%=video.id%>').removeClass('hide'); }
                           )
-                          $('.category4').hover(
-                                 function(){ $('.appear1').addClass('hide'); $('.appear4').removeClass('hide'); },
-                                 function(){ $('.appear4').addClass('hide'); $('.appear1').removeClass('hide'); }
+                          $('.category4<%=video.id%>').hover(
+                                 function(){ $('.appear1<%=video.id%>').addClass('hide'); $('.appear4<%=video.id%>').removeClass('hide'); },
+                                 function(){ $('.appear4<%=video.id%>').addClass('hide'); $('.appear1<%=video.id%>').removeClass('hide'); }
                           )
-                          $('.category5').hover(
-                                 function(){ $('.appear1').addClass('hide'); $('.appear5').removeClass('hide'); },
-                                 function(){ $('.appear5').addClass('hide'); $('.appear1').removeClass('hide'); }
+                          $('.category5<%=video.id%>').hover(
+                                 function(){ $('.appear1<%=video.id%>').addClass('hide'); $('.appear5<%=video.id%>').removeClass('hide'); },
+                                 function(){ $('.appear5<%=video.id%>').addClass('hide'); $('.appear1<%=video.id%>').removeClass('hide'); }
                           )
 
 
@@ -122,7 +161,6 @@
                 </div>
                 <% end %>
                 <% end %>
-              </div>
               <% end %>
             </div>
             <% end %>
@@ -187,17 +225,27 @@
 <script type="text/javascript">
 
 $(document).ready(function() {
+
+setInterval(function(){ 
+
+setHeight50($('.filter_results'), $('#page-content-wrapper'));
 setHeight($('.filter_menu'), $('.filter_results'));
-// When the window is resized the height might
-// change depending on content. So to be safe
-// we rerun the function
-$(window).on(resize, function() {
-setHeight($('#.filter_menu'), $('.filter_results'));
-});
+
+
+
+
+ }, 10);
+
+
 });
 // sets height of element 1 to equal the height of element 2
 function setHeight(elem1, elem2) {
 var height = elem2.height()
+elem1.css('height', height);
+}
+
+function setHeight50(elem1, elem2) {
+var height = 50 + elem2.height()
 elem1.css('height', height);
 }
 </script>
