@@ -23,6 +23,7 @@
   # GET /videos/new
   def new
     # @video = Video.new
+    # if current_user.admin == true
     if current_user.admin == true
       @video = Video.new
     else
@@ -37,6 +38,7 @@
   # POST /videos
   # POST /videos.json
   def create
+    # if current_user.admin == true
     if current_user.admin == true
       @video = Video.new(video_params)
       respond_to do |format|

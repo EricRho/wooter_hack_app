@@ -25,6 +25,12 @@
 		float: left;
 		width: 25%;
 		text-align: left;
+	    @media screen and (max-width: 1279px) {
+			width: 100%;
+			position: absolute;
+			text-align:center;
+			padding: 10px 0px;
+	    }	
 	}
 
 	.s-input{
@@ -32,7 +38,11 @@
 		margin-right: 10%;
 		height: 100%;
 		float: left;
-
+	    
+	    @media screen and (max-width: 1279px) {
+	    	display:none!important;
+	    }
+		
 		.p-input{
 			width: 90%;
 			float: left;
@@ -62,6 +72,43 @@
 		}
 
 	}
+	.mobile_header_slide{
+		display: none!important;
+		@media screen and (max-width: 1279px) {
+			position: absolute;
+			display: block!important;
+			width: 90%;
+			margin: 0 5%;
+			z-index: 100;
+			p{
+				color:white;
+				margin: 0px;
+				height: 30px;
+				padding: 17px 0px;
+				font-weight: bold;
+				width: 64px;
+				text-align: center;
+				cursor:pointer;
+			}
+		}
+		@media screen and (max-width: 960px) {
+			width: 100%;
+			margin: 0px!important;
+	    }	
+	}
+
+	.mobile_header_login{
+		@media screen and (max-width: 1279px) {
+			position: absolute;
+			width: 90%;
+			margin: 0 5%;
+			padding: 0px 0px;
+	    }	
+		@media screen and (max-width: 960px) {
+			display:none!important;
+	    }
+
+	}
 
 	.request, .logout, .login{
 		width: 7.5%;
@@ -70,6 +117,11 @@
 		font-weight: bold;
 		height: 64px;
 		padding: 22px 0px;
+		
+		@media screen and (max-width: 1279px) {
+			float: right;
+			width: 150px;
+	    }
 
 		a{
 			color:white!important;
@@ -86,6 +138,21 @@
 	.request{
 		text-align: right;
 	}
+
+	.request_mobile{
+		display: none;
+		@media screen and (max-width: 1279px) {
+			display: block!important;
+	    }	
+	}
+
+	.request_desk{
+		display: block;
+		@media screen and (max-width: 1279px) {
+			display: none!important;
+	    }	
+	}
+
 
 	.logout, .login{
 		text-align: center;
@@ -104,18 +171,71 @@
 	  position: relative; 
 	  background-color: #eee;
 	  padding: 0px;
+	  min-width: 200px;
+	  left: 0;
+
+      @media screen and (max-width: 1279px) {
+      	position: absolute;
+      	width: 200px;
+      	z-index: 10;
+		box-shadow: 0 0 1px 1px #ff5f00; 
+		left: -200px;
+      }
 
 	  ul{
 	  	position: fixed;
     	width: 16.66666667%;
       	padding: 0px;
 	  	margin: 0px;
+	    @media screen and (max-width: 1279px) {
+	      	width: 200px;
+	    }
+
+	  		.searching{
+ 				list-style-type:none;
+ 				display:none!important;
+			    @media screen and (max-width: 1279px) {
+			      	display: block!important;
+			    }
+				
+				.s-input{
+				    width: 200px;
+				    height: 40px;
+				    margin: -8px 0px 18px;
+
+					.p-input{
+						width:180px;
+						float: left;
+						height: 40px;
+						border: none;
+						padding-left: 10px;
+						color: rgba(0,0,0,.7);
+					}
+
+					.p-input:focus,
+					.b-input:focus{
+						outline:0;
+					}
+
+					.b-input{
+						width: 20px;
+						float: left;
+						height: 40px;
+						border: none;
+						font-weight: bold;
+						color: rgba(0,0,0,.7);
+						background-color: white;			
+					}
+
+				}
+
+	  		}
 
 	  	a{
 	  		color: black;
 	  		font-weight: bold;
 	  		text-align: left;
- 	
+
  			li{
  				list-style-type:none;
 	  			padding: 15px 0px 15px 30px;
@@ -137,22 +257,57 @@
 	.filter_results{
 		min-height: 100vh;
 		padding: 0px;
-		
-		.col-md-4{
+        @media screen and (max-width: 1279px) {
+      		width: 100%;
+      	}
+
+      	.container-fluid{
 			
-			.yt_video{
-				padding: 0px;
-				background-color: #eee;
-				border-radius: 5px;
+ 		    @media screen and (max-width: 1280px) {
+		      	width: 1020px!important;
+		      	margin: 0px auto;
+		    }
 
-				.yt_preview{
-					width: 100%;
-					border-top-left-radius: 5px;
-					border-top-right-radius: 5px;
-				}
+ 		    @media screen and (max-width: 1056px) {
+		      	width: 690px!important;
+		      	margin: 0px auto;
+		    }
 
-			}		
-		}
+ 		    @media screen and (max-width: 720px) {
+		      	width: 100%!important;
+		      	margin: 0px auto;
+		    }
+
+			.col-md-4{
+		    	@media screen and (max-width: 1280px) {
+		      		width: 330px!important;
+		      		margin: 20px auto;
+		      		float: left;
+		    	}
+
+		    	@media screen and (max-width: 720px) {
+		      		width: 330px;
+		      		min-width: 300px;
+		      		margin: 20px auto;
+		      		float: none;
+		    	}
+
+				.yt_video{
+					padding: 0px;
+					background-color: #eee;
+					border-radius: 5px;
+
+					.yt_preview{
+						width: 100%;
+						border-top-left-radius: 5px;
+						border-top-right-radius: 5px;
+					}
+
+				}		
+			}
+      	}
+
+	
 
 
 
@@ -185,9 +340,14 @@
 	}
 
 	.appear{
-		width: 100%;
+		width: 90%;
+		margin: 0 auto;
 		text-align:center;
 		padding: 15px 0px;
+	    white-space: nowrap;
+	    overflow: hidden;
+	    text-overflow: ellipsis;
+
 	}
 }
 
@@ -213,3 +373,62 @@ footer{
 		}
 	}
 }
+
+
+@-webkit-keyframes leftSlide {
+  0%   { left: -200px; }
+  100% { left: 0px; }
+}
+@-moz-keyframes leftSlide {
+  0%   { left: -200px; }
+  100% { left: 0px; }
+}
+@-o-keyframes leftSlide {
+  0%   { left: -200px; }
+  100% { left: 0px; }
+}
+@keyframes leftSlide {
+  0%   { left: -200px; }
+  100% { left: 0px; }
+}
+
+@-webkit-keyframes rightSlide {
+  0%   { left: 0px; }
+  100% { left: -200px; }
+}
+@-moz-keyframes rightSlide {
+  0%   { left: 0px; }
+  100% { left: -200px; }
+}
+@-o-keyframes rightSlide {
+  0%   { left: 0px; }
+  100% { left: -200px; }
+}
+@keyframes rightSlide {
+  0%   { left: 0px; }
+  100% { left: -200px; }
+}
+
+.animations {
+  -webkit-animation: leftSlide .5s; /* Safari 4+ */
+  -moz-animation:    leftSlide .5s; /* Fx 5+ */
+  -o-animation:      leftSlide .5s; /* Opera 12+ */
+  animation:         leftSlide .5s; /* IE 10+, Fx 29+ */
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.animations_remove {
+  -webkit-animation: rightSlide .5s; /* Safari 4+ */
+  -moz-animation:    rightSlide .5s; /* Fx 5+ */
+  -o-animation:      rightSlide .5s; /* Opera 12+ */
+  animation:         rightSlide .5s; /* IE 10+, Fx 29+ */
+  -webkit-animation-fill-mode: forwards;
+  -moz-animation-fill-mode: forwards;
+  -o-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+
